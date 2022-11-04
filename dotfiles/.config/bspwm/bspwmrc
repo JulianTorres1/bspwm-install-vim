@@ -20,10 +20,10 @@ getcolors () {
 getcolors
 
 ## Configurations -------------------------------#
-bspc monitor -d 'I' 'II' 'III' 'IV' 'V' 'VI' 'VII' 'VIII'
+bspc monitor HDMI-1 -d 1 2 3 4 5 6 7 8 9 0
 
 bspc config border_width 1
-bspc config window_gap 10
+bspc config window_gap 0
 bspc config split_ratio 0.50
 
 bspc config focused_border_color "$BLUE" 
@@ -35,14 +35,13 @@ bspc config borderless_monocle true
 bspc config gapless_monocle true
 bspc config paddingless_monocle true
 bspc config single_monocle false
-bspc config focus_follows_pointer true
+##bspc config focus_follows_pointer true
 
-
-# remove all rules first
-bspc rule -r *:*
-
+setxkbmap -option grp:alt_shift_toggle us,es &
 
 ## Autostart -------------------------------#
+
+xrandr --auto && xrandr --output eDP-1 --off
 
 # Kill if already running
 killall -9 sxhkd xsettingsd dunst xfce4-power-manager
@@ -76,7 +75,7 @@ xfce4-power-manager &
 xsetroot -cursor_name left_ptr
 
 # Restore wallpaper
-bash $HOME/.fehbg
+bash /home/nicolast/.config/bspwm/wall.sh
 
 # Start mpd
 exec mpd &

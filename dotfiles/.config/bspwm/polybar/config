@@ -53,8 +53,8 @@ font-0 = "Iosevka Nerd Font:size=10;3"
 font-1 = "Iosevka Nerd Font:size=12;3"
 
 modules-left = mod bspwm 
-modules-center = 
-modules-right = cpu memory filesystem backlight battery network volume date
+modules-center = cpu memory
+modules-right = filesystem backlight battery network volume date
 
 separator =
 spacing = 0
@@ -196,7 +196,7 @@ label = RAM %gb_used%/%gb_free%
 
 ; Only applies if <bar-used> is used
 bar-used-indicator =
-bar-used-width = 50
+bar-used-width = 30
 bar-used-foreground-0 = #55aa55
 bar-used-foreground-1 = #557755
 bar-used-foreground-2 = #f5a70a
@@ -300,13 +300,13 @@ type = internal/battery
 
 full-at = 99
 
-battery = BAT1
+battery = BAT0
 adapter = ACAD
 
 poll-interval = 2
 time-format = %H:%M
 
-format-charging = <animation-charging> <label-charging>
+format-charging = <animation-charging>  <label-charging>
 format-charging-prefix = 
 
 format-discharging = <ramp-capacity> <label-discharging>
@@ -362,7 +362,7 @@ fuzzy-match = true
 
 format = <label-state>
 
-label-monitor = %name%
+label-monitor = HDMI1
 
 ; If any values for label-dimmed-N are defined, the workspace/mode
 ; colors will get overridden with those values if the monitor is out of focus
@@ -392,6 +392,7 @@ label-urgent-foreground = ${color.BACKGROUND}
 label-urgent-background = ${color.RED}
 ;label-urgent-underline = ${color.RED}
 label-urgent-padding = 1
+
 
 label-empty = %index%
 label-empty-foreground = ${color.FOREGROUND}
